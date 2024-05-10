@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CustomKeyboardDialog</class>
+ <widget class="QDialog" name="CustomKeyboardDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>385</width>
+    <height>218</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Choose Button Action</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QRadioButton" name="radioButton">
+     <property name="text">
+      <string>Custom Keyboard Shortcut</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QKeySequenceEdit" name="customKeybind">
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="radioButton_2">
+     <property name="text">
+      <string>Special Action</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="specialAction">
+     <item>
+      <property name="text">
+       <string>Volume -</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Volume +</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Open Web Browser</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>A key that opens Media Player on Windows?</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Open Mail</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Previous Song</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Next Song</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Mute Audio</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Play/Pause</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Open Calculator</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Note: These custom inputs will be made directly by the mouse, not on OS Level.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>CustomKeyboardDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>CustomKeyboardDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/rgb_red.png</file>
+        <file>img/rgb_purple.png</file>
+        <file>img/rgb_magenta.png</file>
+        <file>img/mouse_base.png</file>
+        <file>51-a704f-usb-gaming-mouse.rules</file>
+        <file>img/tray.png</file>
+        <file>img/rgb_blue.png</file>
+    </qresource>
+</RCC>
