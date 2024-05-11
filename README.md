@@ -1,7 +1,7 @@
 # Instant A704F Mouse Utilities for Linux
-This is a mouse configuration tools for the [A704F Gaming Mouse IC](https://instant-sys.com/uploads/pdf/norm/SPEC/A704F_SPEC_EN.V1.00.pdf) by Instant Microelectronics.  
-
 ![](https://img.shields.io/badge/jank_inside-brown) ![](https://img.shields.io/badge/works_on-my_machine-green)
+
+This is a mouse configuration tools for the [A704F Gaming Mouse IC](https://instant-sys.com/uploads/pdf/norm/SPEC/A704F_SPEC_EN.V1.00.pdf) by Instant Microelectronics.  
 
 Configurable items including custom button bindings, change speed of breathing light and DPI configuration.  
 

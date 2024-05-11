@@ -111,7 +111,7 @@ Endpoint: 0
 </table>
 
 
-**DB** is the debug value, **SC** must be set to 2 to work:  
+**DB** is the debug value (**SC** must be set to 2 to work):  
 <table>
   <tr>
     <th>Value</th>
@@ -228,7 +228,7 @@ Endpoint: 0
       ^^ ^^
 ```  
 
-**MK** is a 2 byte value representing the key to be pressed:
+**MK** is a 2 byte value representing the key to be pressed ([HID Usage Table](https://usb.org/sites/default/files/hut1_5.pdf) Consumer Page):
 - `00 ea` - Music Vol -
 - `00 e9` - Music Vol +
 - `02 23` - Open Web Browser
