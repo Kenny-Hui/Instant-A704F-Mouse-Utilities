@@ -25,11 +25,11 @@ MainWindow::MainWindow(QWidget *parent)
     hid_device *specialInputInterface = HIDHelper::openKeyboardInterface();
     if(specialInputInterface) {
         inputHandlerThread = new QThread();
-        CustomMouseInputHandler *im = new CustomMouseInputHandler(specialInputInterface, &mouseSettings);
+        MouseInputHandler *im = new MouseInputHandler(specialInputInterface, &mouseSettings);
         im->moveToThread(inputHandlerThread);
-        connect(im, &CustomMouseInputHandler::input, this, &MainWindow::handleSpecialInput);
-        connect(inputHandlerThread, &QThread::started, im, &CustomMouseInputHandler::run);
-        connect(inputHandlerThread, &QThread::finished, im, &CustomMouseInputHandler::deleteLater);
+        connect(im, &MouseInputHandler::input, this, &MainWindow::handleSpecialInput);
+        connect(inputHandlerThread, &QThread::started, im, &MouseInputHandler::run);
+        connect(inputHandlerThread, &QThread::finished, im, &MouseInputHandler::deleteLater);
         inputHandlerThread->start();
     }
 

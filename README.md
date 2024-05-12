@@ -14,7 +14,9 @@ Configurable items including custom button bindings, change speed of breathing l
 </table>
 
 Vendor ID/Product ID: `18f8:1286`  
-idk maybe when I finish the blog I am writing then this repo would make more sense :)
+All the observed details can be found in [SPECS.md](./SPECS.md)
+
+idk maybe when I finish the blog I am currently writing then this repo would make more sense :)
 
 ## Installation & Usage
 **For Debian-based users:**

@@ -11,7 +11,7 @@
 
 #define APP_NAME "A704F-Mouse-Utilities"
 
-int parseCLI(QApplication *app, QStringList arguments) {
+int parseCLI(QStringList arguments) {
     QCommandLineParser parser;
     parser.addHelpOption();
     parser.addOptions({
@@ -48,10 +48,10 @@ int parseCLI(QApplication *app, QStringList arguments) {
             mouseSettings->loadFromFile();
 
             QThread *inputHandlerThread = new QThread();
-            CustomMouseInputHandler *im = new CustomMouseInputHandler(keyboardInterface, mouseSettings);
+            MouseInputHandler *im = new MouseInputHandler(keyboardInterface, mouseSettings);
             im->moveToThread(inputHandlerThread);
-            CustomMouseInputHandler::connect(inputHandlerThread, &QThread::started, im, &CustomMouseInputHandler::run);
-            CustomMouseInputHandler::connect(inputHandlerThread, &QThread::finished, im, &CustomMouseInputHandler::deleteLater);
+            MouseInputHandler::connect(inputHandlerThread, &QThread::started, im, &MouseInputHandler::run);
+            MouseInputHandler::connect(inputHandlerThread, &QThread::finished, im, &MouseInputHandler::deleteLater);
             inputHandlerThread->start();
 
             qDebug() << "Daemon started.";
@@ -69,13 +69,12 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     a.setApplicationName(APP_NAME);
 
-    int cliResult = parseCLI(&a, a.arguments());
+    int cliResult = parseCLI(a.arguments());
     if(cliResult == 1) { // Parsed & no need app loop
         return 0;
     } else {
         QMenu *menu = new QMenu();
         QAction *quitAction = menu->addAction("Quit");
-        QCoreApplication::quit();
         QObject::connect(quitAction, &QAction::triggered, []() {QCoreApplication::quit();});
         QSystemTrayIcon *trayIcon = new QSystemTrayIcon(QIcon(":/img/tray.png"));
         trayIcon->setContextMenu(menu);

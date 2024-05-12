@@ -6,12 +6,12 @@
 #include <hidapi/hidapi.h>
 
 
-class CustomMouseInputHandler : public QObject
+class MouseInputHandler : public QObject
 {
     Q_OBJECT
 public:
-    CustomMouseInputHandler(hid_device *device, MouseSettings *mouseSettings);
-    ~CustomMouseInputHandler();
+    MouseInputHandler(hid_device *device, MouseSettings *mouseSettings);
+    ~MouseInputHandler();
     void run();
 signals:
     void input(unsigned char inputType, unsigned char mouseKey, unsigned char dpi);

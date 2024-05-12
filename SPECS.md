@@ -1,9 +1,9 @@
 **USB Interfaces (2):**
 - Interface 0 (Mouse)
-- - Endpoint 0 (Control/Send Config)
+- - Endpoint 0 (Control Endpoint/Send Mouse Config)
 - - Endpoint 1 (Mouse Movements and Button Press)
 - Interface 1 (Keyboard)
-- - Endpoint 2 (Send keyboard input and Button (that are binded to DPI/Key Input action) press to Host)
+- - Endpoint 2 (Receive key input and mouse button press for buttons binded to DPI/Key Input)
 
 # Send Config
 Endpoint: 0
@@ -111,7 +111,7 @@ Endpoint: 0
 </table>
 
 
-**DB** is the debug value (**SC** must be set to 2 to work):  
+**DB** is the debug value (**SC** must be set to 02 to work):  
 <table>
   <tr>
     <th>Value</th>
@@ -217,7 +217,7 @@ Endpoint: 0
 **AD** is the currently active DPI Profile (00 - 03)  
 **DP** is the DPI Configuration for the profile, where:
 - The left 4 bits is the DPI value from 1-f
-- The right 4 bits is the DPI profile (8-b for 4 profiles in order)
+- The right 4 bits is the DPI profile (8-b for 4 profiles in order)  
 **EP** is the enabled DPI profile, where:
 - The left 4 bits is unused
 - The right 4 bits is which DPI profile got enabled
@@ -297,8 +297,8 @@ Note: Only sent if button is binded to **DPI+**, **DPI-**, **DPI Cycle** or **Ke
 
 ## On Multimedia Key input
 ```
-02 ?? ??
+02 KY KY
    ^^ ^^
 ```
 
-**??** TODO
+**KY** Multimedia key inputted by the mouse, see [HID Usage Table](https://usb.org/sites/default/files/hut1_5.pdf) Consumer Page

@@ -5,18 +5,18 @@
 #include <hidapi/hidapi.h>
 #include <unistd.h>
 
-CustomMouseInputHandler::CustomMouseInputHandler(hid_device *device, MouseSettings *mouseSettings)
+MouseInputHandler::MouseInputHandler(hid_device *device, MouseSettings *mouseSettings)
 {
     this->device = device;
     this->mouseSettings = mouseSettings;
 }
 
-CustomMouseInputHandler::~CustomMouseInputHandler()
+MouseInputHandler::~MouseInputHandler()
 {
     hid_close(device);
 }
 
-void CustomMouseInputHandler::run() {
+void MouseInputHandler::run() {
     unsigned char buf[10];
     qDebug() << "Started monitoring keyboard interface";
 
@@ -45,7 +45,7 @@ void CustomMouseInputHandler::run() {
     qDebug() << "Stop monitoring for keyboard interface";
 }
 
-void CustomMouseInputHandler::sendCustomKeyInput(hid_device *device, QKeyCombination keyCombo) {
+void MouseInputHandler::sendCustomKeyInput(hid_device *device, QKeyCombination keyCombo) {
     QList<unsigned char> inputList;
     for(int key : DataReference::getModifiers(keyCombo.keyboardModifiers())) {
         inputList.append(key);
@@ -70,7 +70,7 @@ void CustomMouseInputHandler::sendCustomKeyInput(hid_device *device, QKeyCombina
     }
 }
 
-void CustomMouseInputHandler::sendMultimediaKey(hid_device *device, uint16_t key) {
+void MouseInputHandler::sendMultimediaKey(hid_device *device, uint16_t key) {
     unsigned char reports[2];
     // Split to upper byte and lower byte
     reports[0] = key >> 8;
