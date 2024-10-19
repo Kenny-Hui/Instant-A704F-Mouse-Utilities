@@ -66,8 +66,8 @@ public:
         MouseButton{"LMB", 0x01, 0}, // LMB
         MouseButton{"MMB", 0x02, 1}, // MMB
         MouseButton{"RMB", 0x03, 2}, // RMB
-        MouseButton{"SIDE_FWD", 0x04, 3}, // SIDE_FWD
-        MouseButton{"SIDE_BWD", 0x05, 4}, // SIDE_BWD
+        MouseButton{"SIDE_FWD", 0x05, 3}, // SIDE_FWD
+        MouseButton{"SIDE_BWD", 0x04, 4}, // SIDE_BWD
         MouseButton{"MID_FWD", 0x08, 9}, // MID_FWD
         MouseButton{"MID_BWD", 0x06, 10} // MID_BWD
     };
